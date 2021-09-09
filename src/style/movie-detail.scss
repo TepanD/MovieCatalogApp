@@ -1,0 +1,217 @@
+:root {
+  --movdtl-txt-color: #1a1a1a;
+  --movdtl-h1-font-size: 2.5rem;
+  --movdtl-lead-font-size: 1.375rem;
+  --movdtl-p-font-size: 1rem;
+}
+
+.movdtl-back-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  & svg {
+    width: 1rem;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin-right: 0.5rem;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    opacity: 1;
+  }
+}
+
+.movdtl-back-btn:hover {
+  & svg {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+    opacity: 1;
+  }
+}
+
+.movdtl-back-btn:active {
+  & svg {
+    -webkit-animation: goback 0.2s infinite;
+    animation: goback 0.2s infinite;
+  }
+}
+
+@-webkit-keyframes goback {
+  to {
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes goback {
+  to {
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+.movdtl-backdrop-container {
+  position: relative;
+
+  width: 100%;
+  & img:first-child {
+    width: 100%;
+    height: 400px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    -webkit-filter: brightness(90%);
+    filter: brightness(90%);
+  }
+
+  & .movdtl-poster {
+    height: 210px;
+    width: 140px;
+    position: absolute;
+
+    bottom: -25%;
+    right: 10%;
+
+    box-shadow: 0px 1.4px 12px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+
+.content-main-detail.mov-detail {
+  border-radius: 4px;
+  box-shadow: 0px 1.4px 6px 0 rgba(0, 0, 0, 0.25);
+  color: var(--movdtl-txt-color);
+
+  border: none;
+}
+
+.movdtl-content {
+  padding: 0.8rem 1.5rem;
+}
+
+.movdtl-heading {
+  width: 70%;
+  & > h1 {
+    font-size: var(--movdtl-h1-font-size);
+    letter-spacing: 0.04rem;
+    line-height: 1.29;
+  }
+
+  & .movdtl-genres {
+    font-weight: 400;
+    font-size: var(--movdtl-lead-font-size);
+    line-height: 1.6;
+    font-family: "Open Sans";
+  }
+}
+
+.movdtl-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  font-family: "Open Sans", Arial, Helvetica;
+  font-size: 1rem;
+  font-weight: 400;
+  & svg {
+    width: 1rem;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin-left: 2px;
+  }
+}
+
+.movdtl-overview {
+  padding: 2.7rem 0;
+  font-size: var(--movdtl-p-font-size);
+}
+
+@media screen and (max-width: 629px) {
+  .movdtl-overview {
+    padding: 2.3rem 0;
+  }
+}
+
+.movdtl-date-release,
+.movdtl-country-org {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  font-family: "Open Sans";
+
+  margin-top: 1rem;
+
+  & span {
+    margin-left: 10px;
+    font-size: var(--movdtl-p-font-size);
+  }
+}
+
+.movdtl-country-org {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  * {
+    --movdtl-h1-font-size: 2rem;
+    --movdtl-p-font-size: 0.875rem;
+    --movdtl-lead-font-size: 1.25rem;
+  }
+
+  .movdtl-content {
+    padding-top: 5rem;
+  }
+  .movdtl-heading {
+    width: 100%;
+  }
+
+  .movdtl-backdrop-container {
+    & img:first-child {
+      height: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 629px) {
+  .content-main-detail.mov-detail {
+    min-height: 100vh;
+    box-shadow: none;
+    & img {
+      border-radius: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .movdtl-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
